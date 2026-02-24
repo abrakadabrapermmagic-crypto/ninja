@@ -820,3 +820,60 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 415.510980 seconds.
+  path: Assets/Ninja Model@Defeated.fbx
+  artifactKey: Guid(7c9dc106a3f84fa44bb91f69d44dd058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ninja Model@Defeated.fbx using Guid(7c9dc106a3f84fa44bb91f69d44dd058) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6188462009266e8cacbc5f3e7520e21e') in 0.298495 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 161
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Ninja Model@Run.fbx
+  artifactKey: Guid(40b91af9238e6bf4c941f01c713cfb04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ninja Model@Run.fbx using Guid(40b91af9238e6bf4c941f01c713cfb04) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cc3b98ca4fbd886be6a318f6965d87e3') in 0.041074 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 142
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Ninja Model@Thriller Part 3.fbx
+  artifactKey: Guid(c8235da6d87306c4ea95d644b31bd573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ninja Model@Thriller Part 3.fbx using Guid(c8235da6d87306c4ea95d644b31bd573) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e11ec91d8bc97c38fba3cc37a19d73dd') in 0.048917 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 142
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Ninja Model@Sneak Walk.fbx
+  artifactKey: Guid(bcac937875ad43e46a801dfc04292d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ninja Model@Sneak Walk.fbx using Guid(bcac937875ad43e46a801dfc04292d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1277d34a9d97f6e643c32d702522cc1b') in 0.041765 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 142
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ќпераци€ ввода/вывода была прервана из-за завершени€ потока команд или по запросу приложени€.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
