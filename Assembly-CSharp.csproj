@@ -120,6 +120,7 @@
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoBehaviour.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\MotionBlur.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
+    <Compile Include="Assets\CameraFollowWithCollision.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndScratches.cs" />
     <Compile Include="Assets\Ninja Model\Assets\Bricktown\materials\BrickBuildingColorChange.cs" />
