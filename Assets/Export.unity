@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 3157601}
   - component: {fileID: 3157600}
   - component: {fileID: 3157604}
+  - component: {fileID: 3157605}
   m_Layer: 0
   m_Name: camera1
   m_TagString: MainCamera
@@ -320,7 +321,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3157599}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61a82c3eb4bd4db47957c85ff2123def, type: 3}
   m_Name: 
@@ -328,6 +329,27 @@ MonoBehaviour:
   target: {fileID: 588710368}
   offset: {x: 0, y: 5, z: -10}
   smoothSpeed: 0.125
+--- !u!114 &3157605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bdd45c0b5ad244f832d6c17ba111fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  distance: 5
+  target: {fileID: 1915573455}
+  offset: {x: 0, y: 2, z: -5}
+  smoothSpeed: 10
+  minDistance: 1
+  mouseSensitivity: 3
 --- !u!1 &6276965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689,
@@ -1842,6 +1864,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2663499324728981160, guid: 5e09c941eb019ac43abed1294771a224,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 26.041412
+      objectReference: {fileID: 0}
     - target: {fileID: 3612609652340075280, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1955,7 +1982,12 @@ PrefabInstance:
     - target: {fileID: 4308281312757166394, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10.000107
+      value: -10.000061
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149704753068679311, guid: 5e09c941eb019ac43abed1294771a224,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.308624
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
