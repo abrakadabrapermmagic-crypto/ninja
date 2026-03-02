@@ -23630,6 +23630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ninja Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2999777438427747461, guid: 9b85161562ea1e1418ff61f9526ca3a7,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
