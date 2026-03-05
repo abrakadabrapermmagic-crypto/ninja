@@ -1,17 +1,21 @@
 using UnityEngine;
-using FirstPersonMobileTools; // Подключаем пространство имен твоего джойстика
+using FirstPersonMobileTools; // ваш джойстик
 
 [RequireComponent(typeof(CharacterController))]
 public class ThirdPersonMovement : MonoBehaviour
 {
     [Header("Setup")]
-    public Joystick joystick;         // Ссылка на твой UI джойстик
-    public Transform cam;             // Ссылка на Main Camera
+    public Joystick joystick;         // назначьте в инспекторе
+    public Transform cam;
+    public Animator animator;
+
+    [Header("Animation")]
+    public string blendParameter = "Speed";
 
     [Header("Settings")]
-    public float speed = 6f;          // Скорость бега
-    public float turnSmoothTime = 0.1f; // Плавность поворота
-    public float gravity = -9.81f;    // Сила гравитации
+    public float speed = 6f;
+    public float turnSmoothTime = 0.1f;
+    public float gravity = -9.81f;
 
     private CharacterController controller;
     private float turnSmoothVelocity;
@@ -21,43 +25,91 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        // Если камера не назначена, пытаемся найти главную
         if (cam == null && Camera.main != null)
-        {
             cam = Camera.main.transform;
-        }
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
+
+        // Базовые предупреждения
+        if (joystick == null)
+            Debug.LogWarning("[TPM] Joystick not assigned in inspector. Assign it to use mobile input.");
+
+        if (animator == null)
+            Debug.LogWarning("[TPM] Animator not found/assigned. Assign animator or place Animator on child.");
     }
 
     void Update()
     {
-        // 1. Получаем ввод от твоего джойстика
-        float horizontal = joystick.Horizontal;
-        float vertical = joystick.Vertical;
+        // Получаем вход: либо с джойстика, либо с клавиатуры (фоллбек для теста в редакторе)
+        float horizontal = 0f;
+        float vertical = 0f;
 
-        // Создаем вектор направления (X и Z, Y пропускаем)
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
-        // Если джойстик отклонен (есть ввод)
-        if (direction.magnitude >= 0.1f)
+        if (joystick != null)
         {
-            // 2. Вычисляем угол поворота
-            // Atan2 дает угол ввода, прибавляем угол камеры, чтобы движение было "от камеры"
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            horizontal = joystick.Horizontal;
+            vertical = joystick.Vertical;
+        }
+        else
+        {
+            // Фоллбек для тестирования в редакторе: WASD / стрелки
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+        }
 
-            // Плавное вращение персонажа
+        Vector3 rawInput = new Vector3(horizontal, 0f, vertical);
+
+        // Сила отклонения джойстика (0..1)
+        float magnitude = Mathf.Clamp01(new Vector2(horizontal, vertical).magnitude);
+
+        // Отладочный вывод — смотрите консоль
+        Debug.Log($"[TPM] Input H:{horizontal:F2} V:{vertical:F2} -> magnitude:{magnitude:F2}");
+
+        // Ставим параметр сразу (без дополнительного сглаживания) чтобы увидеть изменения в Animator
+        if (animator != null)
+        {
+            // Проверка, есть ли такой параметр в аниматоре (полезно при переименовании)
+            bool hasParam = false;
+            foreach (var p in animator.parameters)
+            {
+                if (p.name == blendParameter && p.type == AnimatorControllerParameterType.Float)
+                {
+                    hasParam = true;
+                    break;
+                }
+            }
+            if (!hasParam)
+            {
+                Debug.LogWarning($"[TPM] Animator doesn't contain float parameter '{blendParameter}'. Check name and type (case-sensitive).");
+            }
+            else
+            {
+                animator.SetFloat(blendParameter, magnitude); // сразу устанавливаем
+                // Доп. лог для подтверждения
+                Debug.Log($"[TPM] Animator parameter '{blendParameter}' set to {magnitude:F2}");
+            }
+        }
+
+        Vector3 direction = rawInput.normalized;
+
+        if (magnitude > 0.1f)
+        {
+            if (cam == null)
+            {
+                Debug.LogWarning("[TPM] Camera not assigned and Camera.main is null. Rotation may be incorrect.");
+            }
+
+            float camY = cam != null ? cam.eulerAngles.y : 0f;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camY;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            // 3. Двигаем персонажа в направлении, куда он смотрит
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            controller.Move(moveDir * speed * magnitude * Time.deltaTime);
         }
 
-        // 4. Применяем гравитацию
         if (controller.isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f; // Прижимаем к земле
-        }
+            velocity.y = -2f;
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

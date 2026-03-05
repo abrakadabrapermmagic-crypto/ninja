@@ -73577,6 +73577,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7486911647317851656}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1963783498 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8197676771170854141, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
+    type: 3}
+  m_PrefabInstance: {fileID: 7486911647317851656}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1965168608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749,
@@ -80225,9 +80231,19 @@ PrefabInstance:
       objectReference: {fileID: 3157603}
     - target: {fileID: 6996814936107795727, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1963783498}
+    - target: {fileID: 6996814936107795727, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
+        type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1060127363}
+    - target: {fileID: 6996814936107795727, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
+        type: 3}
+      propertyPath: blendParameter
+      value: Blend
+      objectReference: {fileID: 0}
     - target: {fileID: 7757188125400913383, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
         type: 3}
       propertyPath: m_LocalPosition.x
