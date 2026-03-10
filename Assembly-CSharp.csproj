@@ -98,8 +98,8 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Utility\Bobbing.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Joystick.cs" />
-    <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Runtime\FPSController.cs" />
     <Compile Include="Assets\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Runtime\FPSController.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
     <Compile Include="Assets\Ninja Model\Assets\script.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
