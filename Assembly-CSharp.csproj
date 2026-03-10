@@ -139,7 +139,6 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\MovementController.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
-    <Compile Include="Assets\ClimbableObject.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Runtime\SceneSwitch.cs" />
     <Compile Include="Assets\Скрипты\SpawnerMover.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
@@ -153,7 +152,6 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledText.cs" />
-    <Compile Include="Assets\PlayerClimb.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Utility\Setting.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledLayers.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledSpace.cs" />
