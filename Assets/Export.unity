@@ -1867,7 +1867,7 @@ PrefabInstance:
     - target: {fileID: 2663499324728981160, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 26.041443
+      value: 26.041412
       objectReference: {fileID: 0}
     - target: {fileID: 3612609652340075280, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
@@ -1987,7 +1987,7 @@ PrefabInstance:
     - target: {fileID: 9149704753068679311, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.308655
+      value: -26.308624
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -80243,6 +80243,21 @@ PrefabInstance:
         type: 3}
       propertyPath: blendParameter
       value: Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757188125400913383, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 200.61029
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757188125400913383, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 200.61029
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757188125400913383, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200.61029
       objectReference: {fileID: 0}
     - target: {fileID: 7757188125400913383, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
         type: 3}
