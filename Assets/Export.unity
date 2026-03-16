@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitMask:
     serializedVersion: 2
-    m_Bits: 118
+    m_Bits: 4294967295
   distance: 8
   target: {fileID: 1963783496}
   offset: {x: -3.192, y: 5.086, z: -3.923}
