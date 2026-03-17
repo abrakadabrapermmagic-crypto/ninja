@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollowWithCollision : MonoBehaviour
+public class CameraFollowWithCollision: MonoBehaviour
 {
     [SerializeField] private LayerMask hitMask;
     [SerializeField] private float distance = 5f;

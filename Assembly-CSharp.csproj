@@ -74,7 +74,6 @@
     <Compile Include="Assets\Папки\ModularFirstPersonController\FirstPersonController\FirstPersonController.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndGrain.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledCategory.cs" />
-    <Compile Include="Assets\Скрипты\CameraFollow.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ImageEffectBase.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Grayscale.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\#NVJOB Dynamic Sky\DynamicSky.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledIndent.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledEnum.cs" />
-    <Compile Include="Assets\Скрипты\NewBehaviourScript.cs" />
     <Compile Include="Assets\Мини игра\PizzaEaterAI.cs" />
     <Compile Include="Assets\Скрипты\CarPeriodicMove.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
@@ -155,7 +153,6 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
-    <Compile Include="Assets\Мини игра\GameOver.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledText.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Utility\Setting.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledLayers.cs" />
