@@ -17,9 +17,13 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public float gravity = -9.81f;
 
+    [Header("Jump")]
+    public float jumpHeight = 2f;
+
     private CharacterController controller;
     private float turnSmoothVelocity;
     private Vector3 velocity;
+    private bool jumpRequest;
 
     void Start()
     {
@@ -31,7 +35,6 @@ public class ThirdPersonMovement : MonoBehaviour
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
 
-        // Базовые предупреждения
         if (joystick == null)
             Debug.LogWarning("[TPM] Joystick not assigned in inspector. Assign it to use mobile input.");
 
@@ -52,7 +55,6 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         else
         {
-            // Фоллбек для тестирования в редакторе: WASD / стрелки
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
         }
@@ -62,13 +64,10 @@ public class ThirdPersonMovement : MonoBehaviour
         // Сила отклонения джойстика (0..1)
         float magnitude = Mathf.Clamp01(new Vector2(horizontal, vertical).magnitude);
 
-        // Отладочный вывод — смотрите консоль
         Debug.Log($"[TPM] Input H:{horizontal:F2} V:{vertical:F2} -> magnitude:{magnitude:F2}");
 
-        // Ставим параметр сразу (без дополнительного сглаживания) чтобы увидеть изменения в Animator
         if (animator != null)
         {
-            // Проверка, есть ли такой параметр в аниматоре (полезно при переименовании)
             bool hasParam = false;
             foreach (var p in animator.parameters)
             {
@@ -78,14 +77,14 @@ public class ThirdPersonMovement : MonoBehaviour
                     break;
                 }
             }
+
             if (!hasParam)
             {
                 Debug.LogWarning($"[TPM] Animator doesn't contain float parameter '{blendParameter}'. Check name and type (case-sensitive).");
             }
             else
             {
-                animator.SetFloat(blendParameter, magnitude); // сразу устанавливаем
-                // Доп. лог для подтверждения
+                animator.SetFloat(blendParameter, magnitude);
                 Debug.Log($"[TPM] Animator parameter '{blendParameter}' set to {magnitude:F2}");
             }
         }
@@ -108,10 +107,27 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(moveDir * speed * magnitude * Time.deltaTime);
         }
 
-        if (controller.isGrounded && velocity.y < 0)
-            velocity.y = -2f;
+        if (controller.isGrounded)
+        {
+            if (velocity.y < 0)
+                velocity.y = -2f;
+
+            if (jumpRequest)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                jumpRequest = false;
+            }
+        }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    public void JumpButtonPressed()
+    {
+        if (controller != null && controller.isGrounded)
+        {
+            jumpRequest = true;
+        }
     }
 }
