@@ -1146,6 +1146,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 26.041443
       objectReference: {fileID: 0}
+    - target: {fileID: 3612609652204281360, guid: 5e09c941eb019ac43abed1294771a224,
+        type: 3}
+      propertyPath: m_OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612609652204281360, guid: 5e09c941eb019ac43abed1294771a224,
+        type: 3}
+      propertyPath: m_OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1217657174}
+    - target: {fileID: 3612609652204281360, guid: 5e09c941eb019ac43abed1294771a224,
+        type: 3}
+      propertyPath: m_OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JumpButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612609652204281360, guid: 5e09c941eb019ac43abed1294771a224,
+        type: 3}
+      propertyPath: m_OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThirdPersonMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3612609652340075280, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4740,6 +4760,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1168787490}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1217657174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6996814936107795727, guid: 48bcc916d4739cf4ebcd3c1c99d28677,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100206982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9951c0963e2c195418fda2efecc912a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1238091487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1983377156960148, guid: 0f06ecfa33f4cb348ab804a22c6de5ba,
