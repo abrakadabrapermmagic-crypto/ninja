@@ -16,11 +16,13 @@ public class GameOver : MonoBehaviour
 
             if (distanceCounter != null)
             {
-                // Исправленная строка формирования текста
-                finalDistanceText.text = "Вы продержались: " + Mathf.Round(distanceCounter.totalDistance) + " метров";
+                finalDistanceText.text = "Вы продержались: " +
+                    Mathf.RoundToInt(distanceCounter.TotalDistance) + " метров";
+
                 gameOverCanvas.gameObject.SetActive(true);
             }
         }
+        
     }
 
     public void RestartGame()
