@@ -115,6 +115,7 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
+    <Compile Include="Assets\GoTo.cs" />
     <Compile Include="Assets\Скрипты\0.57558.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Runtime\CamController.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledScriptableObject.cs" />
