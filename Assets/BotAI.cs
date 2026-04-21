@@ -5,94 +5,145 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Animator))]
 public class BotAI : MonoBehaviour
 {
-    [Header("Настройки преследования")]
-    public Transform target;
-    public float stoppingDistance = 2f;
-    public bool followOnlyWhenVisible = true; // Если false, будет идти всегда
+    [Header("Target")]
+    public Transform player;
 
-    [Header("Настройки Поля Зрения (FOV)")]
-    public float viewRadius = 10f;
-    [Range(0, 360)]
-    public float viewAngle = 90f;
-    public LayerMask targetMask;   // Установите здесь слой Player
-    public LayerMask obstacleMask; // Установите здесь слой Ground/Walls
+    [Header("Vision")]
+    public float viewRadius = 15f;
+    [Range(0, 360)] public float viewAngle = 360f;
+    public float eyeHeight = 1.5f;
+    public LayerMask obstacleMask;
+
+    [Header("Movement")]
+    public float patrolSpeed = 2f;
+    public float chaseSpeed = 4.5f;
+
+    [Header("Memory")]
+    public float searchTime = 3f;
 
     private NavMeshAgent agent;
-    private Animator animator;
-    private bool canSeeTarget;
-    private int speedHash;
+    private Animator anim;
+    private bool isChasing;
+    private bool isSearching;
+    private Vector3 lastKnownPosition;
+    private float searchTimer;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-        agent.stoppingDistance = stoppingDistance;
+        anim = GetComponent<Animator>();
+        agent.speed = patrolSpeed;
 
-        // Кэшируем ID параметра для оптимизации и проверки
-        speedHash = Animator.StringToHash("Speed");
-
-        // Проверка: есть ли такой параметр в Аниматоре вообще?
+        // Проверка наличия параметра Speed (из старого скрипта)
         bool hasSpeedParam = false;
-        foreach (AnimatorControllerParameter param in animator.parameters)
+        foreach (AnimatorControllerParameter param in anim.parameters)
         {
             if (param.name == "Speed") hasSpeedParam = true;
         }
-        if (!hasSpeedParam) Debug.LogError("Ошибка: В Аниматоре нет параметра 'Speed'! Создайте Float параметр с таким именем.");
+
+        if (!hasSpeedParam)
+        {
+            Debug.LogError("Ошибка: В Аниматоре нет параметра 'Speed'!");
+        }
     }
 
     void Update()
     {
-        FieldOfViewCheck();
+        if (player == null) return;
 
-        // Условие движения
-        bool shouldFollow = !followOnlyWhenVisible || (followOnlyWhenVisible && canSeeTarget);
-
-        if (target != null && shouldFollow)
+        if (CanSeePlayer())
         {
-            agent.SetDestination(target.position);
+            isChasing = true;
+            isSearching = false;
+            lastKnownPosition = player.position;
+            searchTimer = searchTime;
+
+            agent.speed = chaseSpeed;
+            agent.SetDestination(player.position);
         }
-
-        // Обновляем анимацию (проверяем скорость агента)
-        float currentSpeed = agent.velocity.magnitude / agent.speed;
-        animator.SetFloat(speedHash, currentSpeed);
-    }
-
-    private void FieldOfViewCheck()
-    {
-        // Ищем объекты в радиусе на слое targetMask
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-
-        if (rangeChecks.Length != 0)
+        else
         {
-            Transform targetInRadius = rangeChecks[0].transform;
-            Vector3 directionToTarget = (targetInRadius.position - transform.position).normalized;
-
-            if (Vector3.Angle(transform.forward, directionToTarget) < viewAngle / 2)
+            if (isChasing)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, targetInRadius.position);
+                isChasing = false;
+                isSearching = true;
+            }
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
+            if (isSearching)
+            {
+                agent.speed = chaseSpeed;
+                agent.SetDestination(lastKnownPosition);
+
+                if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance + 0.5f)
                 {
-                    canSeeTarget = true;
-                    return;
+                    searchTimer -= Time.deltaTime;
+                    if (searchTimer <= 0)
+                    {
+                        isSearching = false;
+                        agent.ResetPath();
+                        agent.speed = patrolSpeed;
+                    }
                 }
             }
+            else
+            {
+                agent.ResetPath();
+                agent.speed = patrolSpeed;
+            }
         }
-        canSeeTarget = false;
+
+        // Обновление анимации Speed (0...1)
+        float currentSpeed = 0f;
+        if (agent.speed > 0)
+        {
+            currentSpeed = agent.velocity.magnitude / agent.speed;
+        }
+
+        anim.SetFloat("Speed", currentSpeed);
     }
 
+    bool CanSeePlayer()
+    {
+        Vector3 dirToPlayer = player.position - transform.position;
+        float distanceToPlayer = dirToPlayer.magnitude;
+
+        if (distanceToPlayer > viewRadius) return false;
+
+        float angleToPlayer = Vector3.Angle(transform.forward, dirToPlayer);
+        if (angleToPlayer > viewAngle / 2f) return false;
+
+        Vector3 eyeOrigin = transform.position + Vector3.up * eyeHeight;
+        Vector3 targetPos = player.position + Vector3.up * eyeHeight;
+        Vector3 dir = (targetPos - eyeOrigin).normalized;
+
+        if (Physics.Raycast(eyeOrigin, dir, distanceToPlayer, obstacleMask)) return false;
+
+        return true;
+    }
+
+    // --- ОТРИСОВКА ВИЗУАЛЬНЫХ ГРАНИЦ (GIZMOS) ---
     private void OnDrawGizmos()
     {
-        // Рисуем радиус в редакторе
+        // Рисуем радиус обзора
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, viewRadius);
+
+        // Определяем цвет линий (зеленый если видит, красный если нет)
+        // Используем CanSeePlayer() для проверки в реальном времени в редакторе
+        bool currentlyVisible = player != null && CanSeePlayer();
+        Gizmos.color = currentlyVisible ? Color.green : Color.red;
 
         // Рисуем границы угла обзора
         Vector3 leftBoundary = Quaternion.Euler(0, -viewAngle / 2, 0) * transform.forward;
         Vector3 rightBoundary = Quaternion.Euler(0, viewAngle / 2, 0) * transform.forward;
 
-        Gizmos.color = canSeeTarget ? Color.green : Color.red;
         Gizmos.DrawLine(transform.position, transform.position + leftBoundary * viewRadius);
         Gizmos.DrawLine(transform.position, transform.position + rightBoundary * viewRadius);
+
+        // Дополнительно: рисуем линию до игрока, если он в зоне видимости
+        if (currentlyVisible)
+        {
+            Gizmos.DrawLine(transform.position + Vector3.up * eyeHeight, player.position + Vector3.up * eyeHeight);
+        }
     }
 }

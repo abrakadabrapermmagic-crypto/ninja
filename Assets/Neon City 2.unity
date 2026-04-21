@@ -1144,7 +1144,7 @@ PrefabInstance:
     - target: {fileID: 2663499324728981160, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 26.041473
+      value: 26.041504
       objectReference: {fileID: 0}
     - target: {fileID: 3612609652204281360, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
@@ -1364,12 +1364,12 @@ PrefabInstance:
     - target: {fileID: 4308281312757166394, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10.000061
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 9149704753068679311, guid: 5e09c941eb019ac43abed1294771a224,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.308685
+      value: -26.308716
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3251,7 +3251,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df613d12e69de604d8145c3403e2f3b6,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1502121382}
+      addedObject: {fileID: 1502121387}
   m_SourcePrefab: {fileID: 100100000, guid: df613d12e69de604d8145c3403e2f3b6, type: 3}
 --- !u!1001 &681584896
 PrefabInstance:
@@ -6331,29 +6331,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1502121382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502121379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a7de6f81e871ad4f904c3ad30f20747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1100206984}
-  stoppingDistance: 2
-  followOnlyWhenVisible: 1
-  viewRadius: 7
-  viewAngle: 360
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!195 &1502121383
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6367,7 +6344,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -6376,6 +6353,28 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1502121387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502121379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba076c04a3caac4e88997c1c6d135bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1100206984}
+  viewRadius: 15
+  viewAngle: 89.5
+  eyeHeight: 1.5
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 246
+  patrolSpeed: 2
+  chaseSpeed: 4.5
+  searchTime: 3
 --- !u!1 &1508149588
 GameObject:
   m_ObjectHideFlags: 0
@@ -8498,6 +8497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cf6cc643b52e2091acd94f386db29d6c@Thriller Part 4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf035a1c65a01914a8cc71785614d121,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
