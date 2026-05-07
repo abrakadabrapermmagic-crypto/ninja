@@ -69,9 +69,11 @@
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Utility\FovKick.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledBanner.cs" />
     <Compile Include="Assets\Папки\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
+    <Compile Include="Assets\Скрипты\GoTo.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledTexturePreview.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
     <Compile Include="Assets\Папки\ModularFirstPersonController\FirstPersonController\FirstPersonController.cs" />
+    <Compile Include="Assets\Скрипты\BotAI.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndGrain.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledCategory.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
@@ -83,8 +85,10 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\#NVJOB Dynamic Sky\DynamicSky.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledIndent.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledEnum.cs" />
+    <Compile Include="Assets\Скрипты\NewBehaviourScript.cs" />
     <Compile Include="Assets\Мини игра\PizzaEaterAI.cs" />
     <Compile Include="Assets\Скрипты\CarPeriodicMove.cs" />
+    <Compile Include="Assets\Скрипты\PlayerHealth.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Notebox\Notebox.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Scripts\AutoСontroller.cs" />
@@ -95,7 +99,9 @@
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Utility\DropDownManager.cs" />
     <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_mouselook_v1.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
+    <Compile Include="Assets\Скрипты\EnemyController.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
+    <Compile Include="Assets\Скрипты\EnemyWeaponTrigger.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
     <Compile Include="Assets\Мини игра\PlayerController.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
@@ -103,12 +109,12 @@
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Joystick.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Runtime\FPSController.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
-    <Compile Include="Assets\BotAI.cs" />
     <Compile Include="Assets\Ninja Model\Assets\script.cs" />
     <Compile Include="Assets\Скрипты\CameraFollowWithCollision.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
+    <Compile Include="Assets\Скрипты\BotPunch.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\SettingsUtils\SettingsData.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Runtime\NPCController.cs" />
@@ -117,8 +123,8 @@
     <Compile Include="Assets\Мини игра\DistanceCounter.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
+    <Compile Include="Assets\Скрипты\GameManager.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
-    <Compile Include="Assets\GoTo.cs" />
     <Compile Include="Assets\Скрипты\0.57558.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\Runtime\CamController.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledScriptableObject.cs" />
@@ -135,6 +141,7 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\MobileButton.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\nonMobileInput.cs" />
+    <Compile Include="Assets\Скрипты\FistDamage.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Utility\DisplaySliderValue.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
@@ -157,6 +164,7 @@
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
+    <Compile Include="Assets\Скрипты\Health.cs" />
     <Compile Include="Assets\Мини игра\GameOver.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledText.cs" />
     <Compile Include="Assets\Папки\Dynamic First Person Mobile\Scripts\Utility\Setting.cs" />
