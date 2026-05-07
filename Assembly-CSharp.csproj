@@ -107,8 +107,8 @@
     <Compile Include="Assets\BotAI.cs" />
     <Compile Include="Assets\Ninja Model\Assets\script.cs" />
     <Compile Include="Assets\Скрипты\CameraFollowWithCollision.cs" />
-    <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
     <Compile Include="Assets\HealthBar.cs" />
+    <Compile Include="Assets\Папки\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
     <Compile Include="Assets\Папки\BOXOPHOBIC\Utils\Scripts\SettingsUtils\SettingsData.cs" />
