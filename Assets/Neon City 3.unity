@@ -4812,10 +4812,19 @@ MonoBehaviour:
   CurrentState: 0
   target: {fileID: 1100206984}
   playerTag: Player
+  viewRadius: 15
+  viewAngle: 360
+  eyeHeight: 1.5
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
   chaseDistance: 15.3
   attackDistance: 0.93
+  patrolSpeed: 2
+  chaseSpeed: 4.5
   pathUpdateInterval: 0.43
   faceTargetSpeed: 9.53
+  searchTime: 3
   damage: 45
   attackCooldown: 2
   weaponTrigger: {fileID: 1734061262}
