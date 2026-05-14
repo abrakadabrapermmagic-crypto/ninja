@@ -2,27 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace Assets.Скрипты
 {
-    // Start is called before the first frame update
-    void Start()
+    public class NewBehaviourScript : MonoBehaviour
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        private void OnTriggerEnter(Collider other)
         {
-            PlayerHealth hp = other.GetComponent<PlayerHealth>();
-            if (hp != null)
+            if (other.CompareTag("Player"))
             {
-                hp.TakeDamage(10f);
+                PlayerHealth hp = other.GetComponent<PlayerHealth>();
+                if (hp != null)
+                {
+                    hp.TakeDamage(10f);
+                }
             }
         }
     }
